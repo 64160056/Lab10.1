@@ -12,6 +12,9 @@ const router = createRouter({
         menu: () => import("@/components/menus/MainMenu.vue"),
         header: () => import("@/components/headers/MainHeader.vue"),
       },
+      meta: {
+        layout: "MainLaout",
+      },
     },
     {
       path: "/about",
@@ -23,6 +26,9 @@ const router = createRouter({
         default: import("../views/AboutView.vue"),
         menu: () => import("@/components/menus/AboutMenu.vue"),
         header: () => import("@/components/headers/AboutHeader.vue"),
+      },
+      meta: {
+        layout: "FullLaout",
       },
     },
   ],
