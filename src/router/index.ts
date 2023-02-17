@@ -10,6 +10,7 @@ const router = createRouter({
       components: {
         default: HomeView,
         menu: () => import("@/components/menus/MainMenu.vue"),
+        header: () => import("@/components/headers/MainHeader.vue"),
       },
     },
     {
@@ -18,7 +19,11 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AboutView.vue"),
+      components: {
+        default: import("../views/AboutView.vue"),
+        menu: () => import("@/components/menus/AboutMenu.vue"),
+        header: () => import("@/components/headers/AboutHeader.vue"),
+      },
     },
   ],
 });

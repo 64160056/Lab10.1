@@ -2,7 +2,7 @@
 
 <template>
   <v-layout>
-    <v-app-bar> <RouterView name="headder"> </RouterView> </v-app-bar>
+    <RouterView name="header"> </RouterView>
     <RouterView name="menu"></RouterView>
 
     <v-main><RouterView></RouterView></v-main>
