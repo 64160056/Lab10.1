@@ -4,7 +4,9 @@ import FullLayout from "@/layouts/FullLayout.vue";
 </script>
 
 <template>
-  <component :is="FullLayout"></component>
+  <component
+    :is="$route.meta.layout === 'MainLayout' ? MainLayout : FullLayout"
+  ></component>
 </template>
 
 <style scoped></style>
