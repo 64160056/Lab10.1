@@ -33,11 +33,13 @@ const rail = ref(true);
         prepend-icon="mdi-home-city"
         title="Home"
         value="home"
+        to="/"
       ></v-list-item>
       <v-list-item
         prepend-icon="mdi-account"
-        title="My Account"
-        value="account"
+        title="Product"
+        value="product"
+        to="/product"
       ></v-list-item>
       <v-list-item
         prepend-icon="mdi-account-group-outline"
