@@ -1,13 +1,13 @@
 import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import type Product from "@/types/Product";
-import axios from "axios";
+import productService from "@/services/product";
 
-export const useProductStore = defineStore("product", () => {
+export const useProductStore = defineStore("Product", () => {
   const products = ref<Product[]>([]);
   async function getProducts() {
     try {
-      const res = await axios.get("http://localhost:3000/products");
+      const res = await productService.getProducts();
       products.value = res.data;
       console.log(res);
     } catch (e) {
