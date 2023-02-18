@@ -8,5 +8,20 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <div>{{ productStore.products }}</div>
+  <v-table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="item of productStore.products" :key="item.id">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+      </tr>
+    </tbody>
+  </v-table>
 </template>
