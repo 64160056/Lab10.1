@@ -14,6 +14,7 @@ onMounted(async () => {
         <th>ID</th>
         <th>Name</th>
         <th>Price</th>
+        <th>Operations</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@ onMounted(async () => {
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.price }}</td>
+        <td><v-btn class="mr-50d">Edit</v-btn><v-btn>Delete</v-btn></td>
       </tr>
     </tbody>
   </v-table>
