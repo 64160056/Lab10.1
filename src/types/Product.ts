@@ -1,8 +1,8 @@
 export default interface Product {
-  id: number;
+  id?: number;
   name: string;
   price: number;
-  createdAt: Date;
-  updatedAt: Date;
-  deletedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
+  deletedAt?: Date;
 }

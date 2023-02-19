@@ -1,7 +1,12 @@
+import type Product from "@/types/Product";
 import http from "./axios";
 
 function getProducts() {
   return http.get("/products");
 }
 
-export default { getProducts };
+function saveProducts(product: Product) {
+  return http.post("/products", product);
+}
+
+export default { getProducts, saveProducts };

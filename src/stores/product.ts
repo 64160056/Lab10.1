@@ -6,6 +6,7 @@ import productService from "@/services/product";
 export const useProductStore = defineStore("Product", () => {
   const dialog = ref(false);
   const products = ref<Product[]>([]);
+  const editedProduct = ref<Product>({ name: "", price: 0 });
   async function getProducts() {
     try {
       const res = await productService.getProducts();
@@ -15,5 +16,14 @@ export const useProductStore = defineStore("Product", () => {
       console.log(e);
     }
   }
-  return { products, getProducts, dialog };
+
+  async function saveProduct() {
+    try {
+      const res = await productService.saveProducts(editedProduct.value);
+      dialog.value = false;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  return { products, getProducts, dialog, editedProduct, saveProduct };
 });
