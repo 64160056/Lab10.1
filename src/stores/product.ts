@@ -4,6 +4,7 @@ import type Product from "@/types/Product";
 import productService from "@/services/product";
 
 export const useProductStore = defineStore("Product", () => {
+  const dialog = ref(false);
   const products = ref<Product[]>([]);
   async function getProducts() {
     try {
@@ -14,5 +15,5 @@ export const useProductStore = defineStore("Product", () => {
       console.log(e);
     }
   }
-  return { products, getProducts };
+  return { products, getProducts, dialog };
 });
