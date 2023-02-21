@@ -1,4 +1,4 @@
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { defineStore } from "pinia";
 import type Product from "@/types/Product";
 import productService from "@/services/product";
@@ -7,11 +7,17 @@ export const useProductStore = defineStore("Product", () => {
   const dialog = ref(false);
   const products = ref<Product[]>([]);
   const editedProduct = ref<Product>({ name: "", price: 0 });
+
+  watch(dialog, (newDialog, oldDialog) => {
+    console.log(newDialog);
+    if (!newDialog) {
+      editedProduct.value = { name: "", price: 0 };
+    }
+  });
   async function getProducts() {
     try {
       const res = await productService.getProducts();
       products.value = res.data;
-      console.log(res);
     } catch (e) {
       console.log(e);
     }
@@ -21,20 +27,17 @@ export const useProductStore = defineStore("Product", () => {
     try {
       const res = await productService.saveProducts(editedProduct.value);
       dialog.value = false;
-      clearProduct();
+      await getProducts();
     } catch (e) {
       console.log(e);
     }
   }
-  function clearProduct() {
-    editedProduct.value = { name: "", price: 0 };
-  }
+
   return {
     products,
     getProducts,
     dialog,
     editedProduct,
     saveProduct,
-    clearProduct,
   };
 });
