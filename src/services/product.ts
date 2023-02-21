@@ -6,6 +6,7 @@ function getProducts() {
 }
 
 function saveProducts(product: Product) {
+  console.log(product);
   return http.post("/products", product);
 }
 

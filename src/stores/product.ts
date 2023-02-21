@@ -25,5 +25,8 @@ export const useProductStore = defineStore("Product", () => {
       console.log(e);
     }
   }
+  function clearProduct() {
+    
+  }
   return { products, getProducts, dialog, editedProduct, saveProduct };
 });

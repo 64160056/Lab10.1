@@ -36,7 +36,7 @@ async function save() {
                 <v-text-field
                   label="Price"
                   required
-                  v-model="productStore.editedProduct.price"
+                  v-model.number="productStore.editedProduct.price"
                   :rules="[(v) => !!v || 'Item is required']"
                 ></v-text-field>
               </v-col>
