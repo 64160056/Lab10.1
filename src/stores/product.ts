@@ -21,12 +21,20 @@ export const useProductStore = defineStore("Product", () => {
     try {
       const res = await productService.saveProducts(editedProduct.value);
       dialog.value = false;
+      clearProduct();
     } catch (e) {
       console.log(e);
     }
   }
   function clearProduct() {
-    
+    editedProduct.value = { name: "", price: 0 };
   }
-  return { products, getProducts, dialog, editedProduct, saveProduct };
+  return {
+    products,
+    getProducts,
+    dialog,
+    editedProduct,
+    saveProduct,
+    clearProduct,
+  };
 });
