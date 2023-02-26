@@ -34,6 +34,7 @@ export const useProductStore = defineStore("Product", () => {
   }
   function editProduct(product: Product) {
     editedProduct.value = product;
+    dialog.value = true;
   }
 
   return {
