@@ -25,7 +25,11 @@ onMounted(async () => {
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.price }}</td>
-        <td><v-btn class="mr-5">Edit</v-btn><v-btn>Delete</v-btn></td>
+        <td>
+          <v-btn class="mr-5" @click="productStore.editProduct(item)"
+            >Edit</v-btn
+          ><v-btn>Delete</v-btn>
+        </td>
       </tr>
     </tbody>
   </v-table>

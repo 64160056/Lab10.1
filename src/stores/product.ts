@@ -32,6 +32,9 @@ export const useProductStore = defineStore("Product", () => {
       console.log(e);
     }
   }
+  function editProduct(product: Product) {
+    editedProduct.value = product;
+  }
 
   return {
     products,
@@ -39,5 +42,6 @@ export const useProductStore = defineStore("Product", () => {
     dialog,
     editedProduct,
     saveProduct,
+    editProduct,
   };
 });
