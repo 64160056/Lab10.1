@@ -5,9 +5,15 @@ function getProducts() {
   return http.get("/products");
 }
 
-function saveProducts(product: Product) {
-  console.log(product);
+function saveProduct(product: Product) {
   return http.post("/products", product);
 }
 
-export default { getProducts, saveProducts };
+function updateProduct(id: number, product: Product) {
+  return http.patch(`"/products/"${id}`, product);
+}
+function deleteProduct(id: number) {
+  return http.delete(`"/products/"${id}`);
+}
+
+export default { getProducts, saveProduct, updateProduct, deleteProduct };
