@@ -49,7 +49,7 @@ export const useProductStore = defineStore("Product", () => {
     }
   }
   function editProduct(product: Product) {
-    editedProduct.value = product;
+    editedProduct.value = JSON.parse(JSON.stringify(product));
     dialog.value = true;
   }
 

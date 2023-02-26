@@ -10,10 +10,10 @@ function saveProduct(product: Product) {
 }
 
 function updateProduct(id: number, product: Product) {
-  return http.patch(`"/products/"${id}`, product);
+  return http.patch(`/products/${id}`, product);
 }
 function deleteProduct(id: number) {
-  return http.delete(`"/products/"${id}`);
+  return http.delete(`/products/${id}`);
 }
 
 export default { getProducts, saveProduct, updateProduct, deleteProduct };
