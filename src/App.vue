@@ -2,13 +2,12 @@
 import MainLayout from "@/layouts/MainLayout.vue";
 import FullLayout from "@/layouts/FullLayout.vue";
 import LoadingDialog from "./components/LoadingDialog.vue";
+import ProductView from "./views/products/ProductView.vue";
 </script>
 
 <template>
-  <component
-    :is="$route.meta.layout === 'MainLayout' ? MainLayout : FullLayout"
-  ></component>
-  <LoadingDialog></LoadingDialog>
+<ProductView></ProductView>
+  
 </template>
 
 <style scoped></style>
